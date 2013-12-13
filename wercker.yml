@@ -19,6 +19,9 @@ deploy:
     - add-ssh-key:
         keyname: DOKKU
     - script:
+        name: Debug SSH
+        code: ssh -v dokku@$SERVER_HOSTNAME
+    - script:
         name: Configure git
         code: |
           rm -rf .git
