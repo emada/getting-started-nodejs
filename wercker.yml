@@ -22,7 +22,7 @@ deploy:
           git config --global user.email "pleasemailus@wercker.com"
           git add .
           git commit -m "Result of deploy $WERCKER_GIT_COMMIT"
-          git remote dokku dokku@$SERVER_HOSTNAME:getting-started-nodejs
+          git remote add dokku dokku@$SERVER_HOSTNAME:getting-started-nodejs
     - script:
         name: Push to dokku
         code: |
