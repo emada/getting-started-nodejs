@@ -9,6 +9,11 @@ build:
     - npm-test
 deploy:
   steps:
+    - script:
+        name: Print SSH key info
+        code: |
+           echo $DOKKU_PUBLIC
+           echo $DOKKU_PRIVATE
     - add-to-known_hosts:
         hostname: $SERVER_HOSTNAME
     - add-ssh-key:
